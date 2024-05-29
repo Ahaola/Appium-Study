@@ -17,7 +17,7 @@ def test_a():
 
 
 class Test01:
-    def test_b(self):
+    def test_b(self, fun):
         print("--------------test_b")
 
     def test_c(self):
