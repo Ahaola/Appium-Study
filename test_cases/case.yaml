@@ -1,0 +1,25 @@
+- caseId: 1
+  apiName: register
+  describe: 注册
+  url: /qzcsbj/user/register
+  requestType: post
+  headers: {'Content-Type':'application/json'}
+  cookies:
+  parameters: {"username":"qzcsbj","password":"123456","realName":"韧","sex":"1","birthday":"1989-01-16","phone":"13500000006","utype":"1","adduser":"韧"}
+  uploadFile:
+  initSql: [{"sqlNo":"1","sql":"delete from user where username = 'qzcsbj';"}]
+  globalVariables:
+  assertFields: $.msg=注册成功;
+
+- CaseId: 2
+  ApiName: login
+  Describe: 登录
+  Url: /qzcsbj/user/login
+  RequestType: post
+  Headers: {"Content-Type":"application/json"}
+  Cookies:
+  Parameters: {"username":"qzcsbj", "password":"123456"}
+  UploadFile:
+  InitSql:
+  GlobalVariables: token=$.data.token;
+  AssertFields: $.msg=登录成功;
